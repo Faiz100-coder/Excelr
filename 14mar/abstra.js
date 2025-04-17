@@ -3,6 +3,7 @@
 // hide
 // hide the unwanted thing
 // show essential details 
+// this is how abstraction works in programming 
 
 
 /*
