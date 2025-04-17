@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- // local storage is 10 mb
+    and session storeage is 5 mb -->
+    <center>
+
+        <!-- // store thhe data in loal storage -->
+        <h2>HTML Forms </h2>
+        <h2 style="color: blueviolet;">store the data in a local storage</h2>
+
+
+        <form>
+            <label for="lname">first name:</label><br>
+
+            <input type="text" id="username" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname"><br><br>
+            <button type="button" onclick="saveData()">submit</button>
+            <button type="button" onclick="removeItem1()">remove items </button>
+
+            <h1 id="display"></h1>
+
+            <script>
+                function saveData() {
+                    let a = document.getElementById('username').value
+                    localStorage.setItem('Name', a)
+
+                    let b = document.getElementById('lname').value
+                    localStorage.setItem('Last Name', b)
+
+                    document.getElementById('display').innerText = `username:${a} Last Name ${b} \n full name ${a + b}`
+
+                }
+
+                function removeItem1() {
+
+                    let a = document.getElementById('username').value
+                    localStorage.removeItem('Name', a)
+
+                    let b = document.getElementById('lname').value
+                    localStorage.removeItem('Last Name', b)
+                }
+            </script>
+
+
+            <h2 style="color: blueviolet;">store the data in a session storage</h2>
+
+        </form>
+
+        <br> <br> <br><br>
+        <form>
+            <label for="lname1">first name:</label><br>
+
+            <input type="text" id="username1" name="fname1"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname2" name="lname2"><br><br>
+            <button type="button" onclick="saveInfo()">submit</button>
+            <button type="button" onclick="removeItems()">remove items </button>
+            <h2 id="display1" style="color: green;"></h2>
+            <!-- <h3 id="display2" style="color: green;"></h3> -->
+
+
+        </form>
+        <script>
+            function saveInfo() {
+
+
+                let a = document.getElementById('username1').value
+                sessionStorage.setItem('First Name', a)
+
+                let b = document.getElementById('lname2').value
+                sessionStorage.setItem('Last Name', b)
+
+                let c = document.getElementById('username1').value
+                sessionStorage.removeItem('firstName', a)
+
+
+                document.getElementById('display2').innerText = `username:${a}     \t Last Name: ${b} \n full name ${a + b}`
+
+
+            }
+            function removeItems() {
+
+
+                let a = document.getElementById('username1').value
+                sessionStorage.removeItem('First Name', a)
+
+                let b = document.getElementById('lname2').value
+                sessionStorage.removeItem('Last Name', b)
+
+                document.getElementById('display1').innerText = "items removed successfully..."
+
+
+                // innertext = show data on the screen browser
+                // inner html write anything 
+            }
+
+
+        </script>
+
+    </center>
+</body>
+
+</html>

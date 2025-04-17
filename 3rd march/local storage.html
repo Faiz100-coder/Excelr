@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>to remove all items form the local storage click below button </h2>
+    <button type="button" onclick=clearAll()> Remove all </button>
+    <h1 id="display" style="color: green;"></h1>
+    <script>
+        localStorage.setItem("name", "faizan")
+        let a = localStorage.getItem("name")
+        console.log(a)
+
+        localStorage.setItem("student", "finalyear")
+        let b = localStorage.getItem("student")
+        console.log(b)
+
+        localStorage.setItem("college", "Diems")
+        let c = localStorage.getItem("college")
+        console.log(c)
+
+        localStorage.setItem("gender", "male")
+        let d = localStorage.getItem("gender")
+        console.log(d)
+
+        localStorage.setItem("year", "2025")
+        let e = localStorage.getItem("year")
+        console.log(e)
+
+        localStorage.setItem("state", "maharashtra")
+        let f = localStorage.getItem("state")
+        console.log(f)
+
+        localStorage.setItem("country", "India")
+        let g = localStorage.getItem("country")
+        console.log(g)
+
+        function clearAll() {
+
+            localStorage.removeItem('state')
+            localStorage.removeItem('country')
+            localStorage.removeItem('year')
+            localStorage.removeItem('gender')
+            localStorage.removeItem('college')
+            localStorage.removeItem('student')
+            localStorage.removeItem('name')
+            console.log("all items removed")
+
+            document.getElementById('display').innerText = " all items removed..."
+
+
+
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

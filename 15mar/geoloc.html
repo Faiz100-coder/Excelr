@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>geolocation</title>
+</head>
+
+<body>
+    <h1>get your location coordinates </h1>
+    <button onclick="getlocation()">get the location </button>
+    <p id="demo"></p>
+    <script>
+        var x = document.getElementById('demo');
+
+        function getlocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(show); // ✅ fixed typo
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function show(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        }
+    </script>
+
+
+
+    it will givve the location Latitude: 13.3341248
+    Longitude: 72.533624
+
+    <!-- <script>
+
+        var x = document.getElementById('demo')
+
+        function getlocation() {
+            if (navigator.geolocation) {
+                console.log(navigator.geolocation)
+                navigator.geolocation.getCurrentPosition(show);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser."
+            }
+        }
+        function show(position) {
+
+            console.log(position)
+            x.innerHTML = position.coords.latitude + " " + position.coords.longitude;
+        }
+
+
+
+    </script> -->
+</body>
+
+</html>

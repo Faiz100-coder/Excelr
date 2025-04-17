@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>check email id are valid or not using regular expression</h1>
+
+    <input type="text" id="email" placeholder="type some thing " required></input>
+    <button type="button" onclick="isvalidate()"> varify
+        email id </button>
+    <script>
+
+        function isvalidate(email) {
+            let emailpat = /^ [a-zA-Z0-9.%+-]+[a-zA-Z0-9.-]+\.[a-zA-Z]{2,.}$/
+
+
+            return email.test(emailpat)
+        }
+        if (isvalidate(email)) {
+            console.log(`${email}is valid email address.`);
+        } else {
+            console.log(`${email} is invalid`);
+        }
+
+    </script>
+
+
+</body>
+
+</html>

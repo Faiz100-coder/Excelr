@@ -1,0 +1,79 @@
+<!-- // conditional question -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h5>write a program to check wheater the number is even or odd</h5>
+
+    <input type="text" placeholder="Enter the Numberr " required>
+    <button onclick="check()">Check Number</button>
+    <p id="result"></p>
+    <script>
+        function check() {
+            const input = document.querySelector('input').value.trim();
+            const resultElement = document.getElementById("result");
+
+            if (input === "") {
+                resultElement.textContent = " you are not enter any thing ....Please enter a number";
+                return; // Exit early if empty
+            }
+
+            const num = Number(input); // Convert to number inside the function
+
+            if (isNaN(num)) {
+                resultElement.textContent = "This is not a valid number!";
+            } else if (num % 2 === 0) {
+                resultElement.textContent = `The number ${num} is even`;
+            } else {
+                resultElement.textContent = `The number ${num} is odd`;
+            }
+        }
+    </script>
+    <!-- create a number and check if it is posative negative or zero  -->
+    <h5>write a program to check wheater the number is positive, negative or zero
+    </h5>
+    <input type="text" id="inputText" placeholder="Enter the Number " required>
+
+    <button type="button" onclick="checkNumber()">submit</button>
+    <p id="result1"></p>
+
+    <script>
+
+        function checkNumber() {
+
+            const input = document.getElementById('inputText').value.trim();
+            const rElements = document.getElementById("result1");
+            if (input === "") {
+                rElements.textContent = "Please Enter the Number Before Click on submit Button ";
+                return; // Exit early if empty
+            }
+            const num = Number(input); // Convert to number inside the function
+            if (isNaN(num)) {
+                rElements.textContent = "this is not a number....please enter the valid number "
+                return;
+            }
+            if (num > 0) {
+                rElements.textContent = `The number is positive`;
+            }
+            else if (num < 0) {
+                rElements.textContent = `the number is negative `;
+            }
+            else {
+                rElements.textContent = `the number is zero`;
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

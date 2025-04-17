@@ -1,0 +1,95 @@
+<!-- // practice questions   DOM document object model 
+ 
+// write a program to change the text of the paragraph when button is clicked  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="text.js"></script>
+
+</head>
+
+<body>
+
+
+    <p id="text"> hey ! ...welcome.. </p>
+    <button onclick="changeText()">Change Text</button>
+    <script>
+        function changeText() {
+            document.getElementById("text").textContent = "Hello World (text changed )";
+
+
+        }
+    </script>
+
+    <!-- // when button is clicked show the entered text below -->
+    <br><br>
+    <p>show the entered text below</p>
+    <input type="text" id="textinput1" placeholder="Enter Your Text">
+    <button onclick="display()">Display Text</button>
+    <p id="displayText1"></p>
+    <script>
+
+        function display() {
+            const inputText1 = document.getElementById("textinput1").value;
+            document.getElementById("displayText1").textContent = inputText1;
+        }
+
+    </script>
+
+
+    <br><br>
+    <h5> add the button that change the background coolor of the page when clicked</h5>
+
+    <button onclick="changeBackground()">Change Background color</button>
+    <script>
+        function changeBackground() {
+            let c = document.body.style.backgroundColor;
+            // if (c === "yellow") {
+            //     document.body.style.backgroundColor = "blue";
+            // } else {
+            //     document.body.style.backgroundColor = "yellow";
+            // }
+            c == "yellow" ? c = " pink   " : document.body.style.backgroundColor = "yellow"
+
+        }
+    </script>
+    <br><br>
+    <h5>write a function that hides an element when button is clicked </h5>
+    <button onclick="hide()">Hide</button>
+    <p id="hideText">This text will be hidden</p>
+    <script>
+        function hide() {
+            let txt = document.getElementById("hideText").style.display;
+            if (txt === "none") {
+                document.getElementById("hideText").style.display = "block";
+            } else {
+                document.getElementById("hideText").style.display = "none";
+            }
+        }
+
+    </script>
+    <!--5)Create a list and add a new item to it every time a button is clicked. -->
+    <br>
+    <h5>Create a list and add a new item to it every time a button is clicked</h5>
+    <ul id="myList"></ul>
+    <li> Item 1</li>
+    <button onclick="addToList()">Add to List</button>
+    <script>
+        let counter = 1;
+        function addToList() {
+            const list = document.getElementById("myList");
+            const newItem = document.createElement("li");
+            newItem.textContent = `Item ${counter++}`;
+            list.appendChild(newItem);
+        }
+
+    </script>
+
+
+</body>
+
+</html>

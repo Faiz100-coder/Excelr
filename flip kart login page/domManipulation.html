@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2> This is called DOM manipulation </h2>
+
+    <div id="container"></div>
+    <button onclick="addElement()">add element</button>
+    <button onclick="removeElement()">Remove element</button>
+    <Script>
+
+        function addElement() {
+            let a = document.createElement('p')
+            a.innerHTML = 'this is the new paragraph'
+            document.getElementById('container').appendChild(a)
+        }
+        function removeElement() {
+            let f = document.getElementById("container")
+            f.lastChild.remove()
+
+
+        }
+
+    </Script>
+
+    <H2>USING addEventListener</H2>
+    <P id="demo"></P>
+    <script>
+
+        // Array of possible background colors
+        const colors = ['#ffcccc', '#ccfcc0', '#ccccff', '#ffffcc', '#ffccff', '#ccffff'];
+        let clickCount = 0;
+
+
+        document.addEventListener('click', abc)
+        function abc() {
+
+            document.getElementById('demo').innerHTML += "hey ..! you clicked--- " + " "
+
+            // Change background color
+            const randomColor = colors[clickCount % colors.length];
+            document.body.style.backgroundColor = randomColor;
+
+            // Increment click counter
+            clickCount++;
+        }
+
+    </script>
+
+    //key up event addEventListener
+    <input type="text" id="textinput" placeholder="type something">
+    <p id="output"> </p>
+    <script>// event listener keyup , keydown ,keypress, click etc
+        document.getElementById("textinput").addEventListener("keypress", abc)
+        function abc(event) {
+            document.getElementById("output").innerHTML = `keyup:${event.key}`
+        }
+
+    </script>
+
+</body>
+
+</html>
